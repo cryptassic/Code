@@ -36,10 +36,10 @@ def main():
     )
     
     #Burp Suite
-    proxies = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080"}
-    response = requests.post(url="http://google.com",files=prebuilt_form,proxies=proxies)
+    # proxies = {"http": "http://127.0.0.1:8080", "https": "http://127.0.0.1:8080"}
+    # response = requests.post(url="http://google.com",files=prebuilt_form,proxies=proxies)
     
-    # response = requests.post(url=oxy_config['pageurl'],files=prebuilt_form)
+    response = requests.post(url=oxy_config['pageurl'],files=prebuilt_form)
     
     if response.status_code == 200:
         LOGGER.info("Success!")
