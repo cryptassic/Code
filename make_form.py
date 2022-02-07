@@ -14,7 +14,7 @@ class Form:
     comments:str
     g_recaptcha_response:str
     h_captcha_response:str
-    consent:int
+    consent:str
     
     def get_form(self):
         return {
@@ -28,7 +28,7 @@ class Form:
             "accountId": "1767d813-f82b-4225-9f32-c942726e3f76",
             "linkedInData":"", 
             "origin":"",
-            "referer": "https://career.oxylabs.io/",
+            "referer": "",
             "socialReferralKey":"",
             "source":"", 
             "consent[marketing]": self.consent,
@@ -62,6 +62,6 @@ class FormMaker:
                 comments=comments,
                 g_recaptcha_response=resolved_key,
                 h_captcha_response=resolved_key,
-                consent=0).get_form()
+                consent="0").get_form()
         
         return form
